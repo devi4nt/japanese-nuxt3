@@ -4,6 +4,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "start": "nuxt start",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "nuke:dependencies": "rm -rf node_modules && rm -f *-lock.yaml && rm -rf .nuxt"
