@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed, ref, Ref, watch } from 'vue'
-import { useIntervalFn } from '@vueuse/core'
+import { useDebounceFn, useIntervalFn } from '@vueuse/core'
 import { Character } from '../classes/Character'
 import { CharacterType, CharacterFilter, ICharacterGroupData } from '../interfaces/characters'
 import { hiraganaTables } from '../constants/hiragana'
@@ -147,6 +147,7 @@ const start = () => {
 
   // shuffle drop elements
   shuffle<HTMLElement>(dragElements.value)
+  console.log(dragElements.value)
 
   for (let index = 0; index < dragElements.value.length; index += 1) {
     dragSetup(dragElements.value[index])
@@ -173,18 +174,21 @@ const stop = () => {
 }
 
 watch(dragSourceElements, () => {
-  // console.log('drag elements changed:', dragSourceElements)
-  for (let x = 0; x < dragSourceElements.value.length; x += 1) {
-    const element = dragSourceElements.value[x]
-    if (element?.parentElement) {
+  const debouncedFn = useDebounceFn(() => {
+    dragElements.value.length = 0
+    for (let x = 0; x < dragSourceElements.value.length; x += 1) {
+      const element = dragSourceElements.value[x]
+      if (element?.parentElement) {
       // setup the drop, dragover event listeners
-      element.parentElement?.addEventListener('drop', (event: MouseEvent) => drop(event, element))
-      element.parentElement?.addEventListener('dragover', (event: MouseEvent) => event.preventDefault())
+        element.parentElement?.addEventListener('drop', (event: MouseEvent) => drop(event, element))
+        element.parentElement?.addEventListener('dragover', (event: MouseEvent) => event.preventDefault())
 
-      dragElements.value.push(element)
+        dragElements.value.push(element)
+      }
     }
-  }
-})
+  }, 250)
+  debouncedFn()
+}, { immediate: true })
 </script>
 <template>
   <div>
