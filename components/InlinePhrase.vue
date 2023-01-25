@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { Kanji } from '../classes/Kanji';
-import { Phrase } from '../classes/Phrase';
+import { Kanji } from '../classes/Kanji'
+import { Phrase } from '../classes/Phrase'
 
 defineProps<{
   phrase: Phrase;
-}>();
+}>()
 </script>
 
 <template>

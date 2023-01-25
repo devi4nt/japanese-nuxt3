@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useNavigationStore } from '../stores/navigation.store';
+import { useNavigationStore } from '../stores/navigation.store'
 
-const { navItems } = useNavigationStore();
+const { navItems } = useNavigationStore()
 </script>
 
 <template>

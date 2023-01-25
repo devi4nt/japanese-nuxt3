@@ -1,20 +1,25 @@
-# Japanese Nuxt 
+# Nuxt 3 Minimal Starter + tailwind + eslint
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+## Versions
+
+Setup using:
+
+```
+# node
+v16.19.0
+
+# pnpm
+7.26.0
+```
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+pnpm install
 ```
 
 ## Development Server
@@ -22,7 +27,7 @@ pnpm install --shamefully-hoist
 Start the development server on http://localhost:3000
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## Production
@@ -30,13 +35,19 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+pnpm run preview
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+Lint:
+
+```bash
+pnpm run lint
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

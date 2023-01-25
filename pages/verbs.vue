@@ -1,11 +1,13 @@
 <script lang="ts" setup>
-import { commonVerbs } from '../constants/verbs';
+import { commonVerbs } from '../constants/verbs'
 </script>
 
 <template>
   <NuxtLayout>
-    <h3 class="text-lg">Verbs</h3>
-    <PhraseTable title="Common verbs" :phrases="commonVerbs"></PhraseTable>
+    <h3 class="text-lg">
+      Verbs
+    </h3>
+    <PhraseTable title="Common verbs" :phrases="commonVerbs" />
   </NuxtLayout>
 </template>
 

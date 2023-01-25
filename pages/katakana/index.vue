@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { katakanaTables } from '../../constants/katakana';
+import { katakanaTables } from '../../constants/katakana'
 </script>
 
 <template>

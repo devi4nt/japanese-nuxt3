@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useNavigationStore } from '../stores/navigation.store';
+import { useNavigationStore } from '../stores/navigation.store'
 
-const { navItems } = useNavigationStore();
+const { navItems } = useNavigationStore()
 </script>
 
 <template>
@@ -10,7 +10,9 @@ const { navItems } = useNavigationStore();
       <ul class="h-7 overflow-hidden">
         <li class="pr-10">
           <h1 class="text-white font-bold">
-            <NuxtLink to="/">Japanese</NuxtLink>
+            <NuxtLink to="/">
+              Japanese
+            </NuxtLink>
           </h1>
         </li>
         <li v-for="(item, index) in navItems" :key="index" class="pl-4">

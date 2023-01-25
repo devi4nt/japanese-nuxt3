@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { hiraganaTables } from '../../constants/hiragana';
+import { hiraganaTables } from '../../constants/hiragana'
 </script>
 
 <template>

@@ -1,15 +1,17 @@
 <script lang="ts" setup>
-import { Phrase } from '../classes/Phrase';
+import { Phrase } from '../classes/Phrase'
 
 defineProps<{
   title: string;
   phrases: Phrase[];
-}>();
+}>()
 </script>
 
 <template>
   <div>
-    <h4 class="mb-2">{{ title }}</h4>
+    <h4 class="mb-2">
+      {{ title }}
+    </h4>
     <table class="w-full text-white bg-black/70">
       <tbody>
         <tr
@@ -23,7 +25,9 @@ defineProps<{
           <td class="p-2 w-1/2 border">
             <template v-if="phrase.english?.length">
               <template v-for="(letter, index) in phrase.english" :key="index">
-                {{ letter }}<template v-if="index !== phrase.english.length - 1">, </template>
+                {{ letter }}<template v-if="index !== phrase.english.length - 1">
+                  ,
+                </template>
               </template>
             </template>
           </td>
